@@ -1,11 +1,17 @@
 import React from "react";
-
-const Comment = ({ comment }) => {
+import { Reactions } from "./reactions";
+import { Body } from "./body";
+import { Header } from "./header";
+import styles from "./styles.module.scss";
+const Comment = () => {
   return (
-    <div>
-      <h2>{comment.user.username}</h2>
+    <div className={styles.commentWrapper}>
+      <Reactions />
+      <div className={styles.commentContentArea}>
+        <Body />
+        <Header />
+      </div>
     </div>
   );
 };
-
 export { Comment };

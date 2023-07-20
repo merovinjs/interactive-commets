@@ -1,0 +1,10 @@
+.commentWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.commentContentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
