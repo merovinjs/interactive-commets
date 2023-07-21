@@ -1,0 +1,27 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.imageWrapper {
+  img {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 999px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.createdAt {
+}
+.username {
+}
+.youIndicator {
+}
+.actionsButton {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

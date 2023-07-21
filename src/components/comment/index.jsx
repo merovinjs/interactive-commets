@@ -8,8 +8,8 @@ const Comment = () => {
     <div className={styles.commentWrapper}>
       <Reactions />
       <div className={styles.commentContentArea}>
-        <Body />
         <Header />
+        <Body />
       </div>
     </div>
   );
