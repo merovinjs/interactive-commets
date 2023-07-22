@@ -10,28 +10,36 @@ const Header = () => {
       user: { image, username },
     },
   } = useComment();
-  console.log(createdAt);
+
+  const ownedmachUser = currentUser.username === username;
+  console.log(ownedmachUser);
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.imageWrapper}>
         <img src={image.png} alt="username" />
       </div>
       <h3 className={styles.username}>{username}</h3>
-      <span className={styles.youIndicator}>you</span>
+      {ownedmachUser && <span className={styles.youIndicator}>you</span>}
       <div className={styles.createdAt}>{createdAt}</div>
       <div className={styles.actionsButton}>
-        <Button>
-          <img src="/images/icon-edit.svg" alt="Edit" />
-          Edit
-        </Button>
-        <Button variant="warning">
-          <img src="/images/icon-delete.svg" alt="Edit" />
-          Delete
-        </Button>
-        <Button>
-          <img src="/images/icon-reply.svg" alt="Edit" />
-          Reply
-        </Button>
+        {ownedmachUser ? (
+          <>
+            <Button>
+              <img src="/images/icon-edit.svg" alt="Edit" />
+              Edit
+            </Button>
+            <Button variant="warning">
+              <img src="/images/icon-delete.svg" alt="Edit" />
+              Delete
+            </Button>
+          </>
+        ) : (
+          <Button>
+            <img src="/images/icon-reply.svg" alt="Edit" />
+            Reply
+          </Button>
+        )}
       </div>
     </div>
   );
