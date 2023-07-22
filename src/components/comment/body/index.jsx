@@ -4,12 +4,16 @@ import { useComment } from "../../comment/useComment";
 
 const Body = () => {
   const {
-    comment: { content },
+    comment: { content, replyingTo },
   } = useComment();
-
+  console.log(replyingTo);
   return (
     <div>
-      <p className={styles.content}>{content}</p>
+      <p className={styles.content}>
+        {replyingTo && <span className={styles.replyingTo}>@{replyingTo}</span>}
+
+        {content}
+      </p>
     </div>
   );
 };

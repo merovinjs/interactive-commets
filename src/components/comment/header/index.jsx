@@ -12,7 +12,6 @@ const Header = () => {
   } = useComment();
 
   const ownedmachUser = currentUser.username === username;
-  console.log(ownedmachUser);
 
   return (
     <div className={styles.headerWrapper}>
