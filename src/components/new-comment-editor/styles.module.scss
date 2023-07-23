@@ -1,0 +1,17 @@
+.newCommentEditor {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background-color: transparent;
+}
+.imageWrapper {
+  img {
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 999px;
+    object-fit: cover;
+    object-position: center;
+  }
+}

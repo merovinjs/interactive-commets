@@ -7,7 +7,7 @@ import { useComment } from "./useComment";
 import { CommentProvider } from "./useComment";
 {
   /*her bir commentin içinde bir replay olabilir yani o commente bir başka kullanıcı cevap vermiş olabilir bu yüzden 
-biz replayıda ‘conditional render etmemiz gerekir.bu replay comment ile aynı template sahip olmalıdır bu durum işimizii kolaylaştırır. 
+biz replayıda ‘conditional render etmemiz gerekir.bu replay comment ile aynı template sahip olmalıdır bu durum işimizi kolaylaştırır. 
 */
 }
 

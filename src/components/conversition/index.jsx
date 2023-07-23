@@ -16,7 +16,10 @@ const Conversition = () => {
         </CommentProvider>
       ))}
 
-      <NewCommentEditor />
+      <NewCommentEditor
+        image={Data.currentUser.image.png}
+        alt={Data.currentUser.username}
+      />
     </div>
   );
 };
