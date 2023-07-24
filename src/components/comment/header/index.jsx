@@ -4,7 +4,9 @@ import { Button } from "../../button";
 import { useComment } from "../useComment";
 const Header = () => {
   const {
+    onReply,
     currentUser,
+    onDelete,
     comment: {
       createdAt,
       user: { image, username },
@@ -28,13 +30,13 @@ const Header = () => {
               <img src="/images/icon-edit.svg" alt="Edit" />
               Edit
             </Button>
-            <Button variant="warning">
+            <Button onClick={onDelete} variant="warning">
               <img src="/images/icon-delete.svg" alt="Edit" />
               Delete
             </Button>
           </>
         ) : (
-          <Button>
+          <Button onClick={onReply}>
             <img src="/images/icon-reply.svg" alt="Edit" />
             Reply
           </Button>

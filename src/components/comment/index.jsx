@@ -5,6 +5,7 @@ import { Header } from "./header";
 import styles from "./styles.module.scss";
 import { useComment } from "./useComment";
 import { CommentProvider } from "./useComment";
+import { NewCommentEditor } from "../new-comment-editor";
 {
   /*her bir commentin içinde bir replay olabilir yani o commente bir başka kullanıcı cevap vermiş olabilir bu yüzden 
 biz replayıda ‘conditional render etmemiz gerekir.bu replay comment ile aynı template sahip olmalıdır bu durum işimizi kolaylaştırır. 
@@ -12,7 +13,10 @@ biz replayıda ‘conditional render etmemiz gerekir.bu replay comment ile aynı
 }
 
 const Comment = () => {
-  const { currentUser, comment } = useComment();
+  const { currentUser, comment, isReply } = useComment();
+  if (!comment) {
+    return null;
+  }
 
   return (
     <>
@@ -24,7 +28,7 @@ const Comment = () => {
         </div>
       </div>
 
-      {comment.replies?.length > 0 && (
+      {comment?.replies?.length > 0 && (
         <div className={styles.replies}>
           {comment?.replies.map((reply) => (
             <CommentProvider
@@ -35,6 +39,13 @@ const Comment = () => {
             </CommentProvider>
           ))}
         </div>
+      )}
+      {isReply && (
+        <NewCommentEditor
+          isReply
+          image={currentUser.image.png}
+          alt={currentUser.username}
+        />
       )}
     </>
   );
