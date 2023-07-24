@@ -4,6 +4,7 @@ import { Button } from "../../button";
 import { useComment } from "../useComment";
 const Header = () => {
   const {
+    onEdit,
     onReply,
     currentUser,
     onDelete,
@@ -26,7 +27,7 @@ const Header = () => {
       <div className={styles.actionsButton}>
         {ownedmachUser ? (
           <>
-            <Button>
+            <Button onClick={onEdit}>
               <img src="/images/icon-edit.svg" alt="Edit" />
               Edit
             </Button>

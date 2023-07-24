@@ -5,6 +5,7 @@ import { Header } from "./header";
 import styles from "./styles.module.scss";
 import { useComment } from "./useComment";
 import { CommentProvider } from "./useComment";
+
 import { NewCommentEditor } from "../new-comment-editor";
 {
   /*her bir commentin içinde bir replay olabilir yani o commente bir başka kullanıcı cevap vermiş olabilir bu yüzden 
@@ -13,7 +14,7 @@ biz replayıda ‘conditional render etmemiz gerekir.bu replay comment ile aynı
 }
 
 const Comment = () => {
-  const { currentUser, comment, isReply } = useComment();
+  const { currentUser, comment, isReply, onNewReply } = useComment();
   if (!comment) {
     return null;
   }
@@ -42,6 +43,7 @@ const Comment = () => {
       )}
       {isReply && (
         <NewCommentEditor
+          onClick={onNewReply}
           isReply
           image={currentUser.image.png}
           alt={currentUser.username}
