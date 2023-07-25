@@ -25,6 +25,12 @@ function CommentProvider({ children, data }) {
     setComment({ ...comment, content: newComment });
     onEdit();
   };
+  const positiveReactions = () => {
+    setComment({ ...comment, score: comment.score + 1 });
+  };
+  const negativeReactions = () => {
+    setComment({ ...comment, score: comment.score - 1 });
+  };
 
   //buraya daha sonra tekrar bak
   const onNewReply = (newComment) => {
@@ -54,6 +60,8 @@ function CommentProvider({ children, data }) {
       onUpdate,
       onReply,
       onDelete,
+      negativeReactions,
+      positiveReactions,
       onNewReply,
       onEdit,
       comment,

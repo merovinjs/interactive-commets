@@ -10,6 +10,7 @@ const NewCommentEditor = ({ isReply = false, image, alt, onClick }) => {
   };
   const handleClick = () => {
     onClick(comment);
+    setComment("");
   };
   return (
     <div className={styles.newCommentEditor}>
